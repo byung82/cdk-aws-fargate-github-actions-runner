@@ -23,7 +23,7 @@ RUN GITHUB_RUNNER_VERSION=${GITHUB_RUNNER_VERSION:-$(curl -s https://api.github.
   && chown -R runner:runner /home/runner
 
 COPY entrypoint.sh entrypoint.sh
-
+RUN chmod +x ./entrypoint.sh
 USER runner
 
 ENTRYPOINT ["./entrypoint.sh"]
